@@ -3133,7 +3133,7 @@ struct kernel_statfs {
                                 "st.d $t6, $sp, 56\n"                         \
                                 "st.d $t7, $sp, 64\n"                         \
                                 "st.d $t8, $sp, 72\n"                         \
-                                "li $a7, %1\n"                                \
+                                "li.d $a7, %1\n"                              \
                                 "syscall  0\n"                                \
                                 "ld.d $t0, $sp, 8\n"                          \
                                 "ld.d $t1, $sp, 16\n"                         \
@@ -3235,7 +3235,7 @@ struct kernel_statfs {
                               *               $a3 = child_tidptr,
                               *               $a4 = newtls)
                               */
-                             "li     $a7, %8\n"
+                             "li.d   $a7, %8\n"
                              "syscall      0\n"
 
                              /* if (%a0 != 0)
@@ -3252,7 +3252,7 @@ struct kernel_statfs {
 
                              /* Call _exit(%a0).
                               */
-                             "li     $a7, %9\n"
+                             "li.d        $a7, %9\n"
                              "syscall           0\n"
                            "1:\n"
 
