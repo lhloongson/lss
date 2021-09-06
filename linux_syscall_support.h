@@ -315,8 +315,9 @@ struct kernel_old_sigaction {
  * kernel (and this header) provides the range [1..KERNEL_NSIG]. The
  * actual number of signals is obviously the same, but the constants
  * differ by one.
+ * It is a temporary plan on LoongArch.
  */
-#ifdef __mips__
+#if defined(__mips__) || defined(__loongarch__)
 #define KERNEL_NSIG 128
 #else
 #define KERNEL_NSIG  64
